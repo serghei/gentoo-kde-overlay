@@ -12,10 +12,10 @@ EGIT_REPO_URI="git://github.com/serghei/kde3-kdebase.git"
 
 LICENSE="GPL-2 LGPL-2"
 KEYWORDS="~x86 ~amd64"
-IUSE="samba logitech-mouse ieee1394 opengl doc"
+IUSE="samba logitech-mouse ieee1394 xkb opengl doc"
 
 
-SLOT="3.6"
+SLOT="3.5"
 
 DEPEND="x11-libs/libX11
     x11-libs/libXext
@@ -52,6 +52,7 @@ src_configure() {
 		-DBUILD_KCONTROL=ON
 		-DWITH_ALL_FEATURES=ON
 		-DWITH_USBIDS=/usr/share/misc/usb.ids
+		$(cmake-utils_use_build xkb KXKB)
 		$(cmake-utils_use_with samba SAMBA)
 		$(cmake-utils_use_with logitech-mouse LIBUSB)
 		$(cmake-utils_use_with ieee1394 LIBRAW1394)
