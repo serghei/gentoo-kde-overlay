@@ -15,7 +15,8 @@ KEYWORDS="~x86 ~amd64"
 
 SLOT="3.5"
 
-RDEPEND="=kde3-base/kdelibs-9999"
+RDEPEND="=kde3-base/kdelibs-9999
+    =kde3-base/libkdepim-9999"
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/kdepim
